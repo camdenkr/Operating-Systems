@@ -1,0 +1,16 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 This project adds features to the project 2 thread library already created. \
+\
+Functions are added to create thread synchronization using semaphores, locks and unlock functions, and a new pthread_join function. \
+\
+Locking prevents the alarm signal from disrupting a thread within a specified function, after which the thread is unlocked allowing the alarm signal to be functional again.\
+\
+The semaphore functions allow for a queue of threads to be added to the program, blocking threads and scheduling a new one, or unblocking them depending on the value of the semaphore.\
+\
+The pthread_join function allows threads to be in the BLOCKED state by another thread. The scheduler was modified so that a thread blocked by another would wait for the target thread to changed to EXITED before the blocked thread can continue running.}
