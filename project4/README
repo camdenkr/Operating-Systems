@@ -1,0 +1,16 @@
+This project create local storage areas for threads, allocating space on the stack for each thread to access privately.
+
+tls_create initializes a storage space to keep track of LSAs and sets up handlers for seg faults, distinguishing between page faults and true segmentation faults. Mmap is used to allocate space to threads using page granularity.
+
+tls_write writes data into a thread's LSA
+
+tls_read reads data from a thread's LSA
+
+tls_destroy frees memory allocated to a thread's LSA and all pages that are referenced by that array, and no other threads. The space in the hash table allocated for the LSA is also reinitialized. 
+
+tls_clone clones an LSA of a target thread to the current thread using the Copy-on-Write technique
+
+
+
+No current problems found with the code.
+
