@@ -1,0 +1,13 @@
+This project creates a thread library for a user.
+
+When pthread_create() is called, first the main thread context is saved, and an alarm is set to go off every 50ms to initiate a schedule of another thread. 
+
+The scheduler function works in a round robin style, assigning a the next ready thread in the list of created threads to start running, assigning states to each (READY, RUNNING, or  EXITED). 
+
+When the scheduler assigns a new thread, the current thread context is saved along with pointers to the corresponding stack addresses. 
+
+If a thread is finished, it will return to pthread_exit() and it's stack will be freed before immediately returning to the scheduler to grab a new thread. If all threads are exited, the main thread will complete execution last and exit.
+
+If called, pthread_self simply returns the thread ID of the one currently running.
+
+No current problems are seen with the current program.
